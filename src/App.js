@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect} from "react";
 
+import * as rdd from 'react-device-detect';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+useEffect(()=>{
+if (rdd.osName==="iOS") {
+  window.location.href = 'https://www.memofac.com/download';
+} else {
+  window.location.href = 'https://play.google.com/store/apps/details?id=com.memofac';
+
+}
+},[])
+
+  return <></>
 }
 
 export default App;
